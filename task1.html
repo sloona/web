@@ -1,0 +1,37 @@
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+<font id="myText">Вот такой текст</font>
+<font id="newText"></font>
+<script>
+let arrayFontColor = ["red", "green", "blue", "brown"];
+let arrayFontStyle = ["italic", "normal"];
+//alert(arrayFontColor[Math.floor(Math.random()*4)]);
+document.querySelector("#myText").style.cssText = "color: red; background-color: green";
+let myString = document.querySelector("#myText").firstChild.nodeValue;
+let newText = document.querySelector("#newText");
+//alert(myString);
+
+for (var i = 0; i < myString.length; i++ ) {
+    var t1 = document.createElement("span");
+	
+	t1.style.color = arrayFontColor[Math.floor(Math.random()*4)];
+	
+	t1.style.fontStyle = arrayFontStyle[Math.floor(Math.random()*4)];
+	
+	t1.textContent = myString[i];
+	
+	newText.appendChild(t1);
+	
+	//div.style.cssText=`color: red !important;
+    //background-color: yellow;
+    //width: 100px;
+    //text-align: center;
+  //`;
+}
+
+</script>
+</body>
+</html>

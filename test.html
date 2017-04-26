@@ -1,0 +1,47 @@
+<html>
+<head>
+   <meta charset="utf-8">
+</head>
+<body>
+<div id="elem">
+  <div id="elem-content">Element elem</div>
+</div>
+<div id ="test">
+<div id="test-content">Element test</div>
+</div>
+
+<div>
+<h3>Балтославянские языки</h3>
+
+<ol id="languages">
+  <li>литовский</li>
+  <li id="slovak">словацкий</li>
+  <li id="latvian">латышский</li>
+  <li>древнерусский</li>
+  <li>болгарский</li>
+</ol>
+
+</div>
+
+<script>
+  let elem = document.getElementById('elem');
+  elem.style.background = 'red';
+  
+  let test = document.querySelector('#test');
+  test.style.background = 'green';
+  
+  let languages = document.querySelectorAll('#languages > li');
+  for (let language of languages){
+    language.style.color = 'green';
+  }
+  
+  document.querySelector("#slovak").style.fontStyle = 'italic';
+  let r_languages = document.querySelectorAll("#slovak + li");
+  for (let language of r_languages){
+    language.style.color = 'red';
+  }
+  //document.querySelector("#slovak   li").style.color = 'red';
+  
+</script>
+</body>
+</html>
